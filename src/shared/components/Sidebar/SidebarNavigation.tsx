@@ -1,15 +1,34 @@
 import { SIDEBAR_NAVIGATION } from "@/shared/constants/sidebar"
+import { NavLink } from "react-router"
 
 export default function SidebarNavigation() {
-  return (
-    <div className='space-y-1'>
-        {
-            SIDEBAR_NAVIGATION.map(item => (
-                <div className="">
-                    {item.title}
-                </div>
-            ))
-        }
-    </div>
-  )
+    return (
+        <div className='space-y-1 w-full'>
+            {
+                SIDEBAR_NAVIGATION.map(item => {
+                    const Icon = item.icon
+                    return (
+                        <NavLink
+                            to={item.href}
+                            className={({ isActive }) =>
+                                `p-2.5 flex gap-2.5 items-center rounded-xl text-sm ${isActive ? "bg-blue-50 text-slate-900" : "text-slate-500"}`
+                            }
+                        >
+                            {({ isActive }) => (
+                                <>
+                                    <Icon
+                                        size={18}
+                                        className={isActive ? "text-blue-600" : "text-slate-500"}
+                                    />
+                                    <span className="hidden xl:block">
+                                        {item.title}
+                                    </span>
+                                </>
+                            )}
+                        </NavLink>
+                    )
+                })
+            }
+        </div>
+    )
 }

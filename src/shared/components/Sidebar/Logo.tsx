@@ -6,12 +6,12 @@ export default function Logo() {
     return (
         <Link
             to={PATHS.dashboard()}
-            className="flex items-center gap-2.5"
+            className="flex items-center gap-2.5 w-full justify-center xl:justify-start"
         >
-            <div className="size-8 rounded-lg bg-blue-600 text-white flex justify-center items-center">
+            <div className="size-9 rounded-lg bg-blue-600 text-white flex justify-center items-center">
                 <ClipboardType size={18} />
             </div>
-            <div className="space-y-0.5">
+            <div className="space-y-0.5 hidden xl:block">
                 <p className="text-xs">FORMLY</p>
                 <p className="text-xs text-slate-500">Workspace</p>
             </div>

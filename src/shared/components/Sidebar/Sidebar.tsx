@@ -4,14 +4,12 @@ import UserProfile from '@/shared/components/Sidebar/UserProfile'
 
 export default function Sidebar() {
     return (
-        <div className='flex flex-col justify-between bg-white border-r border-slate-200 w-62 px-3.5 py-4.5 min-h-screen'>
-            <div className="space-y-6">
+        <div className='flex flex-col items-center xl:items-start justify-between bg-white border-r border-slate-200 xl:w-62 px-3.5 py-4.5 min-h-screen'>
+            <div className="space-y-6 w-full">
                 <Logo />
                 <SidebarNavigation />
             </div>
-            <div>
-                <UserProfile />
-            </div>
+            <UserProfile />
         </div>
     )
 }
