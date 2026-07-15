@@ -1,6 +1,6 @@
 import { ClipboardType } from "lucide-react";
 import { Link } from "react-router";
-import { PATHS } from "../../../router/paths";
+import { PATHS } from "@/router/paths";
 
 export default function Logo() {
     return (

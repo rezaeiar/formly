@@ -1,6 +1,6 @@
-import Logo from './Logo'
-import SidebarNavigation from './SidebarNavigation'
-import UserProfile from './UserProfile'
+import Logo from '@/shared/components/Sidebar/Logo'
+import SidebarNavigation from '@/shared/components/Sidebar/SidebarNavigation'
+import UserProfile from '@/shared/components/Sidebar/UserProfile'
 
 export default function Sidebar() {
     return (

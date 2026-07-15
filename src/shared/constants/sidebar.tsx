@@ -1,5 +1,5 @@
 import { LayoutDashboard, ClipboardList, PanelLeft, Settings } from "lucide-react";
-import { PATHS } from "../../../router/paths";
+import { PATHS } from "@/router/paths";
 
 export const SIDEBAR_NAVIGATION = [
     {
@@ -19,7 +19,7 @@ export const SIDEBAR_NAVIGATION = [
     },
     {
         title: "Settings",
-        href: PATHS.builder(),
+        href: PATHS.settings(),
         icon: Settings
     },
 ]

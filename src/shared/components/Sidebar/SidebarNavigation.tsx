@@ -1,4 +1,4 @@
-import { SIDEBAR_NAVIGATION } from "../constants/sidebar";
+import { SIDEBAR_NAVIGATION } from "@/shared/constants/sidebar"
 
 export default function SidebarNavigation() {
   return (
