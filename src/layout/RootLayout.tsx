@@ -1,5 +1,9 @@
 import { Outlet } from "react-router";
 
 export default function RootLayout() {
-  return <Outlet />
+  return (
+    <div className="bg-slate-50">
+      <Outlet />
+    </div>
+  )
 }
