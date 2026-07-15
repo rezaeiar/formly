@@ -1,11 +1,11 @@
-import { SIDEBAR_NAVIGATION } from "@/shared/constants/sidebar"
+import { WORKSPACE_NAVIGATION } from "@/shared/constants/workspace-navigation"
 import { NavLink } from "react-router"
 
-export default function SidebarNavigation() {
+export default function Navigation() {
     return (
         <div className='space-y-1 w-full'>
             {
-                SIDEBAR_NAVIGATION.map(item => {
+                WORKSPACE_NAVIGATION.map(item => {
                     const Icon = item.icon
                     return (
                         <NavLink
