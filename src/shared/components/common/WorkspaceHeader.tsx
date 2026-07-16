@@ -20,7 +20,7 @@ function WorkspaceHeaderSideContent({ children }: WorkspaceHeaderProps) {
     )
 }
 
-const WorkspaceHeader = ({ children }) => {
+const WorkspaceHeader = ({ children }: WorkspaceHeaderProps) => {
     return (
         <div className="flex justify-between sm:items-center flex-col sm:flex-row gap-x-4 gap-y-3">
             {children}

@@ -5,7 +5,7 @@ export default function WorkspaceLayout() {
     return (
         <div className="flex flex-col sm:flex-row">
             <WorkspaceNavigation />
-            <div className="pt-16 sm:pt-0 w-full">
+            <div className="pt-16 sm:pt-0 w-full overflow-y-auto h-screen">
                 <Outlet />
             </div>
         </div>
