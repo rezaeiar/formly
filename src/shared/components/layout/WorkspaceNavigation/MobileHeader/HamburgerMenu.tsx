@@ -1,3 +1,4 @@
+import { Button } from "@/shared/components/ui/button"
 import { Menu, X } from "lucide-react"
 
 type HamburgerMenuProps = {
@@ -7,11 +8,12 @@ type HamburgerMenuProps = {
 
 export default function HamburgerMenu({ open, onToggle }: HamburgerMenuProps) {
     return (
-        <button
-            className="bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-slate-900"
+        <Button
+            variant="icon"
+            size="icon"
             onClick={onToggle}
         >
             {open ? <X size={18} /> : <Menu size={18} />}
-        </button>
+        </Button>
     )
 }
