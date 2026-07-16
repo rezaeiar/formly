@@ -1,7 +1,7 @@
 import { WORKSPACE_NAVIGATION } from "@/shared/constants/workspace-navigation"
 import { NavLink } from "react-router"
 
-export default function Navigation() {
+export default function SidebarNavigation() {
     return (
         <div className='space-y-1 w-full'>
             {
