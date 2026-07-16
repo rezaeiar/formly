@@ -1,7 +1,7 @@
 import { LayoutDashboard, ClipboardList, PanelLeft, Settings } from "lucide-react";
 import { PATHS } from "@/router/paths";
 
-export const SIDEBAR_NAVIGATION = [
+export const WORKSPACE_NAVIGATION = [
     {
         title: "Dashboard",
         href: PATHS.dashboard(),

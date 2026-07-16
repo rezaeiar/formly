@@ -1,11 +1,13 @@
 import { Outlet } from "react-router"
-import Sidebar from "@/shared/components/Sidebar/Sidebar"
+import WorkspaceNavigation from "@/shared/components/layout/WorkspaceNavigation/WorkspaceNavigation"
 
 export default function WorkspaceLayout() {
     return (
-        <div className="flex">
-            <Sidebar />
-            <Outlet />
+        <div className="flex flex-col sm:flex-row">
+            <WorkspaceNavigation />
+            <div className="pt-16 sm:pt-0">
+                <Outlet />
+            </div>
         </div>
     )
 }
