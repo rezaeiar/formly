@@ -5,7 +5,7 @@ export default function WorkspaceLayout() {
     return (
         <div className="flex flex-col sm:flex-row">
             <WorkspaceNavigation />
-            <div className="pt-16 sm:pt-0">
+            <div className="pt-16 sm:pt-0 w-full">
                 <Outlet />
             </div>
         </div>

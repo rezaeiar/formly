@@ -13,7 +13,7 @@ export default function MobileHeader() {
 
     const handleToggleMenuVisibility = () => setIsOpenMenu(prev => !prev)
     return (
-        <div className="fixed top-0 left-0 w-full sm:hidden z-50">
+        <div className="fixed shrink-0 top-0 left-0 w-full sm:hidden z-50">
             <div className="w-full p-3 bg-white items-center justify-between flex relative z-30 border-b border-slate-200">
                 <Logo />
                 <HamburgerMenu open={isOpenMenu} onToggle={handleToggleMenuVisibility} />
