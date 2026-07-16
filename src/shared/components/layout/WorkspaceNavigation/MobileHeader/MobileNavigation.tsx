@@ -1,9 +1,12 @@
-import { WORKSPACE_NAVIGATION } from "@/shared/constants/workspace-navigation"
-import { NavLink } from "react-router"
+import { WORKSPACE_NAVIGATION } from '@/shared/constants/workspace-navigation'
+import React from 'react';
+import { NavLink } from 'react-router'
 
-export default function SidebarNavigation() {
+function MobileNavigation() {
+    console.log("mobile navigati");
+    
     return (
-        <div className='space-y-1 w-full'>
+        <div className='space-y-1 w-full px-3 bg-white border-b border-slate-200 py-4'>
             {
                 WORKSPACE_NAVIGATION.map(item => {
                     const Icon = item.icon
@@ -21,7 +24,7 @@ export default function SidebarNavigation() {
                                         size={18}
                                         className={isActive ? "text-blue-600" : "text-slate-500"}
                                     />
-                                    <span className="hidden xl:block">
+                                    <span>
                                         {item.title}
                                     </span>
                                 </>
@@ -33,3 +36,4 @@ export default function SidebarNavigation() {
         </div>
     )
 }
+export default React.memo(MobileNavigation)

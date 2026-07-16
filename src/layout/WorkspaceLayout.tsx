@@ -3,9 +3,11 @@ import WorkspaceNavigation from "@/shared/components/layout/WorkspaceNavigation/
 
 export default function WorkspaceLayout() {
     return (
-        <div className="flex">
+        <div className="flex flex-col sm:flex-row">
             <WorkspaceNavigation />
-            <Outlet />
+            <div className="pt-16 sm:pt-0">
+                <Outlet />
+            </div>
         </div>
     )
 }
