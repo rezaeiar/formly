@@ -1,108 +1,61 @@
 import EmptyState from "@/features/forms/FormsTableSection/components/table/EmptyState";
 import { forms } from "@/features/forms/FormsTableSection/constants";
-import FormState from "@/shared/components/common/FormState";
-import { Button } from "@/shared/components/ui/button";
-import { ExternalLink } from "lucide-react";
+import { flexRender, getCoreRowModel, useReactTable } from "@tanstack/react-table";
+import { columns } from "@/features/forms/FormsTableSection/components/table/columns";
+
 
 export default function FormsTable() {
+    const table = useReactTable({
+        data: forms,
+        columns,
+        getCoreRowModel: getCoreRowModel(),
+    })
     return (
         <div>
             {forms.length ? (
-                <table
-                    className="border border-slate-200 rounded-2xl overflow-hidden block"
-                >
+                <table className="border border-slate-200 rounded-2xl overflow-hidden w-full">
                     <thead>
-                        <tr
-                            className="py-3 px-4 block bg-slate-100 text-slate-500 text-sm *:font-normal"
-                        >
-                            <th>
-                                Form
-                            </th>
-                            <th>
-                                Status
-                            </th>
-                            <th>
-                                Responses
-                            </th>
-                            <th>
-                                Updated
-                            </th>
-                            <th>
-                                Action
-                            </th>
-                        </tr>
+                        {
+                            table.getHeaderGroups().map(headerGroups => (
+                                <tr className="py-3 px-4 bg-slate-100 text-slate-500 text-sm *:font-normal">
+                                    {
+                                        headerGroups.headers.map(header => (
+                                            <th
+                                                key={header.id}
+                                                className={`px-4 py-3 ${header.column.columnDef.meta?.align === "right"
+                                                    ? "text-right"
+                                                    : "text-left"
+                                                    }`}
+                                            >
+                                                {flexRender(
+                                                    header.column.columnDef.header,
+                                                    header.getContext()
+                                                )}
+                                            </th>
+                                        ))
+                                    }
+                                </tr>
+                            ))
+                        }
                     </thead>
                     <tbody>
-                        <tr
-                            className="p-4 block bg-white text-sm border-b border-slate-200 last:border-none"
-                        >
-                            <td>
-                                <div className="space-y-1">
-                                    <h2 className="text-sm text-slate-900">
-                                        Customer feedback
-                                    </h2>
-                                    <p className="text-slate-500">
-                                        Collect product feedback from recent customers.
-                                    </p>
-                                </div>
-                            </td>
-                            <td>
-                                <FormState state="Draft" />
-                            </td>
-                            <td>
-                                <span className="text-slate-900">
-                                    482
-                                </span>
-                            </td>
-                            <td>
-                                <span className="text-slate-500">
-                                    Today
-                                </span>
-                            </td>
-                            <td>
-                                <Button
-                                    variant="secondary"
-                                >
-                                    <ExternalLink size={18} />
-                                    Open
-                                </Button>
-                            </td>
-                        </tr>
-                        <tr
-                            className="p-4 block bg-white text-sm border-b border-slate-200 last:border-none"
-                        >
-                            <td>
-                                <div className="space-y-1">
-                                    <h2 className="text-sm text-slate-900">
-                                        Customer feedback
-                                    </h2>
-                                    <p className="text-slate-500">
-                                        Collect product feedback from recent customers.
-                                    </p>
-                                </div>
-                            </td>
-                            <td>
-                                <FormState state="Draft" />
-                            </td>
-                            <td>
-                                <span className="text-slate-900">
-                                    482
-                                </span>
-                            </td>
-                            <td>
-                                <span className="text-slate-500">
-                                    Today
-                                </span>
-                            </td>
-                            <td>
-                                <Button
-                                    variant="secondary"
-                                >
-                                    <ExternalLink size={18} />
-                                    Open
-                                </Button>
-                            </td>
-                        </tr>
+                        {table.getRowModel().rows.map((row) => (
+                            <tr key={row.id} className="bg-white border-b" >
+                                {row.getVisibleCells().map((cell) => (
+                                    <td key={cell.id}
+                                        className={`px-4 py-3 ${cell.column.columnDef.meta?.align === "right"
+                                            ? "flex justify-end"
+                                            : ""
+                                            }`}
+                                    >
+                                        {flexRender(
+                                            cell.column.columnDef.cell,
+                                            cell.getContext()
+                                        )}
+                                    </td>
+                                ))}
+                            </tr>
+                        ))}
                     </tbody>
                 </table>
             ) : <EmptyState />
