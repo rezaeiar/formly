@@ -1,0 +1,42 @@
+export const forms = [
+    {
+        id: 1,
+        form: "Customer Feedback Form",
+        description: "Collect feedback from customers about their experience.",
+        status: "Published",
+        responses: 245,
+        updated: new Date("2026-07-15"),
+    },
+    {
+        id: 2,
+        form: "Employee Satisfaction Survey",
+        description: "Survey to measure employee satisfaction and engagement.",
+        status: "Draft",
+        responses: 0,
+        updated: new Date("2026-07-10"),
+    },
+    {
+        id: 3,
+        form: "Event Registration Form",
+        description: "Registration form for upcoming company events.",
+        status: "Published",
+        responses: 128,
+        updated: new Date("2026-07-12"),
+    },
+    {
+        id: 4,
+        form: "Product Research Questionnaire",
+        description: "Gather insights about new product ideas.",
+        status: "Draft",
+        responses: 0,
+        updated: new Date("2026-07-08"),
+    },
+    {
+        id: 5,
+        form: "Newsletter Signup Form",
+        description: "Collect emails from users interested in updates.",
+        status: "Published",
+        responses: 532,
+        updated: new Date("2026-07-16"),
+    },
+];
