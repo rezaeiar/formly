@@ -1,4 +1,6 @@
-export const forms = [
+import { type Form } from "@/features/forms/FormsTableSection/types/form"
+
+export const forms: Form[] = [
     {
         id: 1,
         form: "Customer Feedback Form",
@@ -23,20 +25,4 @@ export const forms = [
         responses: 128,
         updated: new Date("2026-07-12"),
     },
-    {
-        id: 4,
-        form: "Product Research Questionnaire",
-        description: "Gather insights about new product ideas.",
-        status: "Draft",
-        responses: 0,
-        updated: new Date("2026-07-08"),
-    },
-    {
-        id: 5,
-        form: "Newsletter Signup Form",
-        description: "Collect emails from users interested in updates.",
-        status: "Published",
-        responses: 532,
-        updated: new Date("2026-07-16"),
-    },
-];
+]

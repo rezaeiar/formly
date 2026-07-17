@@ -1,6 +1,4 @@
-
-import FormFilter from "@/features/forms/FormsTableSection/components/FormFilter";
-import FormsTable from "@/features/forms/FormsTableSection/components/FormsTable";
+import FormTableSection from "@/features/forms/FormsTableSection/components/FormTableSection";
 import WorkspaceHeader from "@/shared/components/common/WorkspaceHeader";
 import { Button } from "@/shared/components/ui/button";
 import { PlusCircle } from "lucide-react";
@@ -26,8 +24,7 @@ export default function Forms() {
           </Button>
         </WorkspaceHeader.SideContent>
       </WorkspaceHeader>
-      <FormFilter />
-      <FormsTable />
+      <FormTableSection />
     </div>
   )
 }
