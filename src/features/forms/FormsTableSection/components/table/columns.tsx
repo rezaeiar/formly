@@ -15,11 +15,11 @@ export const columns: ColumnDef<Form>[] = [
         maxSize: 500,
         cell: ({ row }) => (
             <div className="space-y-1">
-                <h2 className="text-sm text-slate-900 line-clamp-1">
+                <h2 className="text-sm text-slate-900 line-clamp-1 text-start">
                     {row.original.form}
                 </h2>
 
-                <p className="text-sm text-slate-500 line-clamp-2">
+                <p className="text-sm text-slate-500 line-clamp-2 text-start">
                     {row.original.description}
                 </p>
             </div>
@@ -75,6 +75,7 @@ export const columns: ColumnDef<Form>[] = [
 
                 <Button
                     variant="secondary"
+                    className={"w-full! sm:w-fit!"}
                     render={<Link to={`/forms/${id}`} />}
                 >
                     <ExternalLink size={18} />

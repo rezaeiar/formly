@@ -1,13 +1,13 @@
 import EmptyState from "@/features/forms/FormsTableSection/components/table/EmptyState";
 import { flexRender, type Table } from "@tanstack/react-table";
 import type { Form } from "@/features/forms/FormsTableSection/types/form";
-type Props = {
+type FormsTableProps = {
     table: Table<Form>;
 };
 
-export default function FormsTable({ table }: Props) {
+export default function FormsTable({ table }: FormsTableProps) {
     return (
-        <div>
+        <div className="hidden sm:block">
             {table.getRowModel().rows.length ? (
                 <table className="border border-slate-200 rounded-2xl overflow-hidden w-full">
                     <thead>
