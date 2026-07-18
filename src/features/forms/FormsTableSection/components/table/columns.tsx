@@ -10,13 +10,16 @@ export const columns: ColumnDef<Form>[] = [
         accessorKey: "form",
         header: "Form",
         enableGlobalFilter: true,
+        size: 320,
+        minSize: 320,
+        maxSize: 500,
         cell: ({ row }) => (
             <div className="space-y-1">
-                <h2 className="text-sm text-slate-900">
+                <h2 className="text-sm text-slate-900 line-clamp-1">
                     {row.original.form}
                 </h2>
 
-                <p className="text-sm text-slate-500">
+                <p className="text-sm text-slate-500 line-clamp-2">
                     {row.original.description}
                 </p>
             </div>
@@ -64,9 +67,6 @@ export const columns: ColumnDef<Form>[] = [
     {
         id: "actions",
         accessorKey: "id",
-        meta: {
-            align: "right",
-        },
         header: "Action",
         cell: ({ getValue }) => {
             const id = getValue();

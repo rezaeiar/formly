@@ -1,12 +1,12 @@
 import { Button } from "@/shared/components/ui/button"
 import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuGroup,
-    DropdownMenuLabel,
-    DropdownMenuRadioGroup,
-    DropdownMenuRadioItem,
-    DropdownMenuTrigger,
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuLabel,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuTrigger,
 } from "@/shared/components/ui/dropdown-menu"
 import { ChevronDown } from 'lucide-react'
 
@@ -23,18 +23,21 @@ export default function SortDropdown({ table }: SortDropdownProps) {
     sorting.length === 0
       ? "default"
       : sorting[0].id === "form"
-      ? "title"
-      : sorting[0].id === "updated"
-      ? "date"
-      : sorting[0].id === "responses"
-      ? "responses"
-      : "default";
+        ? "title"
+        : sorting[0].id === "updated"
+          ? "date"
+          : sorting[0].id === "responses"
+            ? "responses"
+            : "default";
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger
         render={
-          <Button variant="secondary">
+          <Button
+            variant="secondary"
+            className={"w-full sm:w-auto"}
+          >
             <ChevronDown size={18} />
             Sort
           </Button>

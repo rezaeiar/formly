@@ -25,7 +25,10 @@ export default function StatusDropdown({ table }: StatusDropdownProps) {
     <DropdownMenu>
       <DropdownMenuTrigger
         render={
-          <Button variant="secondary">
+          <Button
+           variant="secondary"
+           className={"w-full sm:w-auto"}
+          >
             <ListFilter size={18} />
             Status
           </Button>
