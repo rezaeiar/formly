@@ -9,6 +9,7 @@ export const columns: ColumnDef<Form>[] = [
     {
         accessorKey: "form",
         header: "Form",
+        enableGlobalFilter: true,
         cell: ({ row }) => (
             <div className="space-y-1">
                 <h2 className="text-sm text-slate-900">
@@ -25,6 +26,7 @@ export const columns: ColumnDef<Form>[] = [
     {
         accessorKey: "status",
         header: "Status",
+        enableGlobalFilter: true,
         cell: ({ row }) => (
             <FormState state={row.original.status} />
         ),

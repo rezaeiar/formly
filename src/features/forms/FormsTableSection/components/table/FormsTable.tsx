@@ -1,18 +1,14 @@
 import EmptyState from "@/features/forms/FormsTableSection/components/table/EmptyState";
-import { forms } from "@/features/forms/FormsTableSection/constants";
-import { flexRender, getCoreRowModel, useReactTable } from "@tanstack/react-table";
-import { columns } from "@/features/forms/FormsTableSection/components/table/columns";
+import { flexRender, type Table } from "@tanstack/react-table";
+import type { Form } from "@/features/forms/FormsTableSection/types/form";
+type Props = {
+    table: Table<Form>;
+};
 
-
-export default function FormsTable() {
-    const table = useReactTable({
-        data: forms,
-        columns,
-        getCoreRowModel: getCoreRowModel(),
-    })
+export default function FormsTable({ table }: Props) {
     return (
         <div>
-            {forms.length ? (
+            {table.getRowModel().rows.length ? (
                 <table className="border border-slate-200 rounded-2xl overflow-hidden w-full">
                     <thead>
                         {
