@@ -4,6 +4,7 @@ import { forms } from '@/features/forms/FormsTableSection/constants';
 import { getCoreRowModel, getFilteredRowModel, getSortedRowModel, useReactTable, type ColumnFiltersState, type SortingState } from '@tanstack/react-table';
 import { useState } from 'react';
 import { columns } from "@/features/forms/FormsTableSection/components/table/columns";
+import MobileFormTable from '@/features/forms/FormsTableSection/components/table/MobileFormTable/MobileFormTable';
 
 export default function FormTableSection() {
     const [globalFilter, setGlobalFilter] = useState("");
@@ -33,6 +34,7 @@ export default function FormTableSection() {
         <>
             <FormFilter table={table} />
             <FormsTable table={table} />
+            <MobileFormTable table={table} />
         </>
     );
 }

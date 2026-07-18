@@ -1,13 +1,13 @@
 import EmptyState from "@/features/forms/FormsTableSection/components/table/EmptyState";
 import { flexRender, type Table } from "@tanstack/react-table";
 import type { Form } from "@/features/forms/FormsTableSection/types/form";
-type Props = {
+type FormsTableProps = {
     table: Table<Form>;
 };
 
-export default function FormsTable({ table }: Props) {
+export default function FormsTable({ table }: FormsTableProps) {
     return (
-        <div>
+        <div className="hidden sm:block">
             {table.getRowModel().rows.length ? (
                 <table className="border border-slate-200 rounded-2xl overflow-hidden w-full">
                     <thead>
@@ -18,10 +18,8 @@ export default function FormsTable({ table }: Props) {
                                         headerGroups.headers.map(header => (
                                             <th
                                                 key={header.id}
-                                                className={`px-4 py-3 ${header.column.columnDef.meta?.align === "right"
-                                                    ? "text-right"
-                                                    : "text-left"
-                                                    }`}
+                                                style={{ width: header.getSize() }}
+                                                className={`px-4 py-3 text-left`}
                                             >
                                                 {flexRender(
                                                     header.column.columnDef.header,
@@ -38,11 +36,10 @@ export default function FormsTable({ table }: Props) {
                         {table.getRowModel().rows.map((row) => (
                             <tr key={row.id} className="bg-white border-b" >
                                 {row.getVisibleCells().map((cell) => (
-                                    <td key={cell.id}
-                                        className={`px-4 py-3 ${cell.column.columnDef.meta?.align === "right"
-                                            ? "flex justify-end"
-                                            : ""
-                                            }`}
+                                    <td
+                                        key={cell.id}
+                                        style={{ width: cell.column.getSize() }}
+                                        className={`px-4 py-3`}
                                     >
                                         {flexRender(
                                             cell.column.columnDef.cell,
