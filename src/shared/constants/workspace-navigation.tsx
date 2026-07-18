@@ -1,4 +1,4 @@
-import { LayoutDashboard, ClipboardList, PanelLeft, Settings } from "lucide-react";
+import { LayoutDashboard, ClipboardList, PanelLeft } from "lucide-react";
 import { PATHS } from "@/router/paths";
 
 export const WORKSPACE_NAVIGATION = [
@@ -16,10 +16,5 @@ export const WORKSPACE_NAVIGATION = [
         title: "Builder",
         href: PATHS.builder(),
         icon: PanelLeft
-    },
-    {
-        title: "Settings",
-        href: PATHS.settings(),
-        icon: Settings
     },
 ]

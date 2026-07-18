@@ -1,6 +1,6 @@
 import StatCard from "@/shared/components/common/StatCard"
 
-export default function StatsOverview() {
+export default function FormStats() {
 
     const stats = [
         {
@@ -21,15 +21,9 @@ export default function StatsOverview() {
             stat: "24%",
             description: "Across active forms"
         },
-        {
-            id: crypto.randomUUID(),
-            title: "Draft Forms",
-            stat: "45",
-            description: "Ready to review"
-        },
     ]
     return (
-        <div className="grid sm:grid-cols-4 items-center gap-3 xl:gap-4">
+        <div className="grid sm:grid-cols-3 items-center gap-3 xl:gap-4">
             {
                 stats.map(stat => (
                     <StatCard

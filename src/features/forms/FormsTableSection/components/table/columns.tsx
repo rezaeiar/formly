@@ -68,15 +68,14 @@ export const columns: ColumnDef<Form>[] = [
         id: "actions",
         accessorKey: "id",
         header: "Action",
-        cell: ({ getValue }) => {
-            const id = getValue();
+        cell: ({ row }) => {
 
             return (
 
                 <Button
                     variant="secondary"
                     className={"w-full! sm:w-fit!"}
-                    render={<Link to={`/forms/${id}`} />}
+                    render={<Link to={`/forms/${row.original.form}`} />}
                 >
                     <ExternalLink size={18} />
                     Open
